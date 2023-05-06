@@ -71,13 +71,13 @@
       const scrollHandler = () => {
         scrollAnimations.forEach(element => {
           const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-          const elementHeight = element.offsetHeight;
-          const revealPosition = elementPosition - windowHeight + (elementHeight / 2);
-          const hidePosition = elementPosition - windowHeight - (elementHeight / 2);
+          const elementHeight = element.clientHeight;
+          const revealPosition = elementPosition - windowHeight + 100;
+          const hidePosition = elementPosition + elementHeight / 2;
 
-          if (window.scrollY >= revealPosition) {
+          if (window.scrollY >= revealPosition && window.scrollY < hidePosition) {
             showElement(element);
-          } else if (window.scrollY <= hidePosition) {
+          } else {
             hideElement(element);
           }
         });
