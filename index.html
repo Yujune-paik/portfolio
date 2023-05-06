@@ -3,42 +3,68 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>おしゃれな動くWebサイト</title>
+  <title>スクロールアニメーションWebサイト</title>
   <style>
     body {
       font-family: 'Arial', sans-serif;
       background-color: #f0f0f0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
       margin: 0;
     }
 
-    h1 {
-      font-size: 4rem;
-      color: #333;
-      text-align: center;
-      animation: fadeIn 2s;
+    .container {
+      width: 80%;
+      margin: 0 auto;
     }
 
-    @keyframes fadeIn {
-      0% {
-        opacity: 0;
-        transform: translateY(-20px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    h1 {
+      font-size: 3rem;
+      color: #333;
+      text-align: center;
+      margin-top: 100px;
+    }
+
+    img, p {
+      width: 100%;
+      margin: 50px 0;
+      opacity: 0;
+      transform: translateX(-100px);
+      transition: 1s;
+    }
+
+    .show {
+      opacity: 1;
+      transform: translateX(0);
     }
   </style>
 </head>
 <body>
-  <h1>おしゃれな動くWebサイト</h1>
+  <div class="container">
+    <h1>スクロールアニメーションWebサイト</h1>
+    <img src="image1.jpg" alt="画像1" class="scroll-animation">
+    <p class="scroll-animation">ここにテキストが入ります。スクロールするとテキストが横から飛び出してきます。</p>
+    <img src="image2.jpg" alt="画像2" class="scroll-animation">
+    <p class="scroll-animation">ここにさらにテキストが入ります。スクロールするとテキストが横から飛び出してきます。</p>
+  </div>
 
   <script>
-    // ここにJavaScriptのコードを追加して、さらに動きをつけることができます。 
+    document.addEventListener('DOMContentLoaded', () => {
+      const scrollAnimations = document.querySelectorAll('.scroll-animation');
+
+      const scrollHandler = () => {
+        scrollAnimations.forEach(element => {
+          const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+          const windowHeight = window.innerHeight;
+          const revealPosition = elementPosition - windowHeight + 100;
+
+          if (window.scrollY >= revealPosition) {
+            element.classList.add('show');
+          }
+        });
+      };
+
+      window.addEventListener('scroll', scrollHandler);
+      scrollHandler();
+    });
   </script>
 </body>
 </html>
