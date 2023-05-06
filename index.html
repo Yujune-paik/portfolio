@@ -1,56 +1,44 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>あなたの名前 - ポートフォリオ</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>おしゃれな動くWebサイト</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f0f0f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    h1 {
+      font-size: 4rem;
+      color: #333;
+      text-align: center;
+      animation: fadeIn 2s;
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section id="about">
-            <h1>あなたの名前</h1>
-            <p>自己紹介文をここに入れてください。</p>
-        </section>
-        <section id="projects">
-            <h2>Projects</h2>
-            <!-- プロジェクトをリスト形式で表示 -->
-            <ul>
-                <li>
-                    <h3>プロジェクト名1</h3>
-                    <p>プロジェクトの説明をここに入れてください。</p>
-                </li>
-                <li>
-                    <h3>プロジェクト名2</h3>
-                    <p>プロジェクトの説明をここに入れてください。</p>
-                </li>
-            </ul>
-        </section>
-        <section id="contact">
-            <h2>Contact</h2>
-            <form>
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email">
-                <label for="message">Message:</label>
-                <textarea id="message" name="message"></textarea>
-                <button type="submit">Send</button>
-            </form>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; あなたの名前 2023</p>
-    </footer>
+  <h1>おしゃれな動くWebサイト</h1>
+
+  <script>
+    // ここにJavaScriptのコードを追加して、さらに動きをつけることができます。
+  </script>
 </body>
 </html>
